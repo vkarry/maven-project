@@ -1,11 +1,23 @@
 pipeline {
 	agent any
+	  stages {
+	    stage ('Initialize') {
+	      steps {
+	        echo "First step"  
+	      }	     
+	    }
 
-	stages {
-	  stage('Clone') {
-	    steps {
-          sh 'mvn clean package'
+	    stage ('Clone') {
+	      steps {
+	        echo "Second step"
+	      }
+	    }
+
+	    stage ('Build') {
+	      steps {
+	        echo "Third step"
+	      }
+	    }
+	    
 	  }
-	 }
-	}
 }
